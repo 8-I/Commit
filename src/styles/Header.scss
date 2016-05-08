@@ -1,0 +1,48 @@
+
+.Header {
+
+  width: 100%;
+  margin-top: 50px;
+  box-sizing: border-box;
+  background-color: #FFF;
+  color: #828282;
+  padding: 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #fafafa;
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 40px;
+    }
+
+    text-decoration: none;
+    color: #a5a5a5;
+    font-family: Futura;
+    font-size: 1.2em;
+    transition: all 0.15s ease-in-out;
+
+    &:hover {
+      color: #40D1FF;
+      transition: all 0.15s ease-in-out;
+    }
+  }
+
+  .navigation {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    .profile {
+      width: 40px;
+      border-radius: 50%;
+    }
+  }
+}

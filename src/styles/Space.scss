@@ -1,0 +1,17 @@
+
+.Space {
+
+  position: relative;
+
+  .thumbnail {
+    width: 200px;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  .profile {
+    width: 50px;
+    border-radius: 50%;
+    position: absolute;
+  }
+}

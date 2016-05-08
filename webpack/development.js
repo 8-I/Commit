@@ -28,6 +28,9 @@ export default {
       test: /\.scss$/,
       loaders: ['style', 'css', 'postcss'],
       include: src
+    }, {
+      test: /\.(png|jpg|svg)$/,
+      loader: 'file',
     }]
   },
 

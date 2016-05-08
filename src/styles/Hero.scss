@@ -1,0 +1,22 @@
+
+.Hero {
+
+  margin-top: 20px;
+  height: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Futura;
+  font-size: 2em;
+  color: #b0b0b0;
+  font-weight: bold;
+  box-shadow: none;
+  transition: all .2s ease-in-out;
+
+  img {
+    width: 300px;
+    margin-top: -100px;
+  }
+
+}
