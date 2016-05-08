@@ -35,3 +35,5 @@ export const db = table => ({
   update: update(table),
   save: save(table),
 })
+
+export const Spaces = db('spaces')
