@@ -2,7 +2,7 @@ import express from 'express'
 import compression from 'compression'
 import bodyParser from 'body-parser'
 
-import config from 'config'
+import config from 'config';
 import render from 'middlewares/render'
 
 const server = express()
