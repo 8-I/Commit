@@ -1,5 +1,4 @@
 
-import { r } from 'api/db'
 import express from 'express'
 
 import SpacesRouter from './routes/spaces'

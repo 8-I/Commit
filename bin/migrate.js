@@ -1,24 +1,27 @@
 
-require('babel-register')
-require('babel-polyfill')
-
-const path = require('path')
-const fs = require('fs')
-const appModulePath = require('app-module-path')
+import path from 'path'
+import fs from 'fs'
+import appModulePath from 'app-module-path'
 
 appModulePath.addPath(path.resolve(__dirname, '../src'))
 
 if (!process.argv[2]) {
-	console.error('No migration specified.');
-	process.exit()
+  /* eslint-disable no-console */
+  console.error('No migration specified.')
+  /* eslint-enable no-console */
+  process.exit()
 }
 
-try {
-	fs.accessSync(path.resolve(__dirname, '../src/api/db/migrations/' + process.argv[2] + '.js'));
-	require('api/db/migrations/' + process.argv[2] + '.js')
-} catch(e) {
-	console.log(`${process.argv[2]}: Migration not found`);
-}
+fs.access(path.resolve(__dirname, `../src/api/db/migrations/${process.argv[2]}.js`), (err, ok) => {
+  if (err) {
+    /* eslint-disable no-console */
+    return console.log(`${process.argv[2]}: Migration not found`)
+    /* eslint-enable no-console */
+  }
+  require(`api/db/migrations/${process.argv[2]}.js`)
+  return ok
+})
 
-console.log('Migration achieved successfully.');
-process.exit()
+/* eslint-disable no-console */
+console.log('Migration achieved successfully.')
+/* eslint-enable no-console */

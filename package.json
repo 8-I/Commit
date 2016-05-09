@@ -10,7 +10,7 @@
     "start:app": "node bin/start --app",
     "start:api": "node bin/start --api",
     "start": "npm run start:app & npm run start:api & wait",
-    "migrate": "node bin/migrate",
+    "migrate": "babel-node bin/migrate",
     "lint": "eslint src webpack bin"
   },
   "babel": {
@@ -27,7 +27,10 @@
     "extends": [
       "zavatta",
       "zavatta-react"
-    ]
+    ],
+    "rules": {
+      "comma-dangle": [2, "always-multiline"]
+    }
   },
   "dependencies": {
     "body-parser": "^1.15.0",

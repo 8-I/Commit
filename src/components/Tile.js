@@ -10,7 +10,7 @@ class Tile extends Component {
   render () {
 
     const { title, children } = this.props
-  
+
     return (
       <Container>
         <div className='Tile'>

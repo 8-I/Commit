@@ -4,8 +4,8 @@ import config from 'config'
 export const DATABASE = config.env === 'development' ? 'develop' : 'master'
 
 export const r = require('rethinkdbdash')({
-	host: '62.210.236.128',
-	port: 28015
+  host: '62.210.236.128',
+  port: 28015,
 }).db(DATABASE)
 
 const find = table => id =>
@@ -37,3 +37,4 @@ export const db = table => ({
 })
 
 export const Spaces = db('spaces')
+

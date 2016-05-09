@@ -7,8 +7,6 @@ class Hero extends Component {
 
   render () {
 
-    const { children } = this.props
-  
     return (
       <div className='Hero'>
         <div className='background' />
