@@ -10,7 +10,7 @@ export default {
 
   resolve: {
     modules: ['src', 'node_modules'],
-    unsafeCache: true
+    unsafeCache: true,
   },
 
   loaders: [],
@@ -18,7 +18,7 @@ export default {
   output: {
     path: dist,
     filename: 'bundle.js',
-    publicPath: '/dist/'
+    publicPath: '/dist/',
   },
 
   plugins: [
@@ -28,10 +28,10 @@ export default {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(env),
-        BROWSER: JSON.stringify(true)
-      }
-    })
+        BROWSER: JSON.stringify(true),
+      },
+    }),
 
-  ]
+  ],
 
 }

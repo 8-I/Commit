@@ -15,7 +15,7 @@ export default {
 
   entry: [
     ...webpackConfig.entry,
-    'webpack-hot-middleware/client'
+    'webpack-hot-middleware/client',
   ],
 
   module: {
@@ -23,15 +23,15 @@ export default {
       test: /\.js$/,
       loader: 'babel',
       include: src,
-      query: { presets: ['react-hmre'] }
+      query: { presets: ['react-hmre'] },
     }, {
       test: /\.scss$/,
       loaders: ['style', 'css', 'postcss'],
-      include: src
+      include: src,
     }, {
       test: /\.(png|jpg|svg)$/,
       loader: 'file',
-    }]
+    }],
   },
 
   postcss: wp => [postcssImport({ addDependencyTo: wp }), precss, autoprefixer],
@@ -39,7 +39,7 @@ export default {
   plugins: [
     ...webpackConfig.plugins,
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
-  ]
+    new webpack.NoErrorsPlugin(),
+  ],
 
 }

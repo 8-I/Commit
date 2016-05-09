@@ -11,19 +11,19 @@ export default {
 
   output: {
     ...webpackConfig.output,
-    filename: 'bundle-[hash].js'
+    filename: 'bundle-[hash].js',
   },
 
   module: {
     loaders: [...webpackConfig.loaders, {
       test: /\.js$/,
       loaders: ['babel'],
-      exclude: /node_modules/
+      exclude: /node_modules/,
     }, {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract('style', 'css!postcss'),
-      exclude: /node_modules/
-    }]
+      exclude: /node_modules/,
+    }],
   },
 
   postcss: () => [precss, autoprefixer],
@@ -39,9 +39,9 @@ export default {
     new StatsWriterPlugin({
       transform: data => JSON.stringify({
         main: data.assetsByChunkName.main[0],
-        style: data.assetsByChunkName.main[1]
-      })
-    })
+        style: data.assetsByChunkName.main[1],
+      }),
+    }),
 
   ],
 
@@ -56,7 +56,7 @@ export default {
     chunks: false,
     chunkModules: false,
     cached: false,
-    cachedAssets: false
-  }
+    cachedAssets: false,
+  },
 
 }

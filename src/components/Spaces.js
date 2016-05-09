@@ -9,7 +9,7 @@ class Spaces extends Component {
   render () {
 
     const { items } = this.props
-  
+
     return (
       <Container>
         <div className='Spaces'>

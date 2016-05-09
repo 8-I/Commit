@@ -13,12 +13,12 @@ appModulePath.addPath(path.resolve(__dirname, '../src'))
 
 const launcher = {
   '--app': () => require('../src/server'),
-  '--api': () => require('../src/dev/api')
+  '--api': () => require('../src/dev/api'),
 }
 
 const pipingOpts = {
   hook: true,
-  ignore: /(actions|components|reducers|styles)\/.*/
+  ignore: /(actions|components|reducers|styles)\/.*/,
 }
 
 if (config.env !== 'development' || piping(pipingOpts)) {
