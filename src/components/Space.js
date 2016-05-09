@@ -6,7 +6,7 @@ if (process.env.BROWSER) { require('styles/Space.scss') }
 
 /** Person **/
 const Person = ({ name, title, picture, time, timeShortVersion, expanded, onMouseEnter }) => (
-	<div className={classNames('person', { expanded })} onMouseEnter={onMouseEnter}>
+	<a href="/lol" className={classNames('person', { expanded })} onMouseEnter={onMouseEnter}>
 		<div className='picture'>
 			<p className='time-short-version'>
 				<i className='ion-checkmark-round'></i> {timeShortVersion}
@@ -22,7 +22,7 @@ const Person = ({ name, title, picture, time, timeShortVersion, expanded, onMous
 				<span className='time'><i className='ion-checkmark-round'></i> {time}</span>
 			</div>
 		</div>
-	</div>
+	</a>
 )
 
 /** People **/
@@ -40,7 +40,7 @@ class People extends Component {
   }
 
   componentDidMount () {
-    this.timer = setInterval(this.rotate, 4000)
+    // this.timer = setInterval(this.rotate, 4000)
   }
 
   componentWillUnmount () {
@@ -99,16 +99,42 @@ class Space extends Component {
     return (
       <div className='Space space-from-top'>
       <div className='pictures'>
+        <div className="mask"></div>
         <img src='/assets/photo1.jpg'/>
         <img src='/assets/photo2.jpg'/>
         <img src='/assets/photo3.jpg'/>
       </div>
 
-      <h2>Chez Guillaume</h2>
-      <h1>☕☕💻☀️</h1>
+      <h1 className='padded-left'>☕☕💻☀️</h1>
 
       <h3>People who recently checked in</h3>
-      <People people={this.state.people}/>
+      <div className='padded-left'>
+      <People people={this.state.people}/></div>
+
+      <h3>Schedule</h3>
+
+      <div className="schedule padded-left">
+        <p className="text">
+          Come work any day of the week, from 2 P.M. to 8 P.M.<br/>
+          China tea provided !
+        </p>
+        <p className="currentStatus">
+          Open right now until 8 P.M.
+        </p>
+      </div>
+
+      <h3>Upcoming events</h3>
+
+      <div className="events padded-left">
+        <div className="event">
+          <p className="title">Brainstorming session</p>
+          <p className="when">Wednesday from 3 P.M. to no time</p>
+        </div>
+        <div className="event">
+          <p className="title">Project Speed dating</p>
+          <p className="when">Friday from 8 P.M. to 10 P.M.</p>
+        </div>
+      </div>
       </div>
     )
   }

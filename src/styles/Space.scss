@@ -6,6 +6,8 @@ $darker-greenish-blue: #00cca6;
 
 .Space {
 
+  .padded-left { padding-left: 15px; }
+
   h1, h2 { font-weight: normal; }
   h2 { font-size: 30px;}
   h1 { font-size: 50px; margin-bottom: 20px;}
@@ -14,6 +16,17 @@ $darker-greenish-blue: #00cca6;
     display: flex;
     flex-flow: row;
     margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+
+    .mask {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 200px;
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(253,253,253,1) 74%,rgba(252,252,252,1) 99%);
+    }
 
     img {
       height: 250px;
@@ -29,8 +42,11 @@ $darker-greenish-blue: #00cca6;
 
   .people {
     display: flex;
+    margin-bottom: 30px;
 
     .person {
+      text-decoration: none;
+
       &.expanded {
         .time-short-version {
           opacity: 0;
@@ -93,6 +109,43 @@ $darker-greenish-blue: #00cca6;
         .inner {
           width: 200px;
         }
+      }
+    }
+  }
+
+  .schedule {
+    .text {
+      font-size: 28px;
+      line-height: 36px;
+      color: #999;
+      margin-bottom: 10px;
+    }
+    .currentStatus {
+      color: #aaa;
+      transition: color 250ms ease-out;
+      margin-bottom: 30px;
+    }
+    &:hover .currentStatus {
+      color: $darker-greenish-blue;
+    }
+  }
+
+
+  .events {
+    .event {
+      padding: 30px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      float: left;
+      margin-right: 15px;
+
+      .title {
+        text-align: center;
+        font-size: 17px;
+      }
+
+      .when {
+        font-size: 14px;
       }
     }
   }
