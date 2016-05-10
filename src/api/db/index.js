@@ -27,6 +27,11 @@ const save = table => object =>
 const update = table => (id, object) =>
   r.table(table).get(id).update(object).run()
 
+const append = table => (id, field, element) =>
+  r.table(table).get(id).update({
+    [field]: r.row(field).append(element),
+  })
+
 export const db = table => ({
   find: find(table),
   findAll: findAll(table),
@@ -34,7 +39,9 @@ export const db = table => ({
   destroy: destroy(table),
   update: update(table),
   save: save(table),
+  append: append(table),
 })
 
 export const Spaces = db('spaces')
+export const User = db('users')
 

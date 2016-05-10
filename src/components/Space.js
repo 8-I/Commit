@@ -6,7 +6,7 @@ if (process.env.BROWSER) { require('styles/Space.scss') }
 
 /** Person **/
 const Person = ({ name, title, picture, time, timeShortVersion, expanded, onMouseEnter }) => (
-	<a href="/lol" className={classNames('person', { expanded })} onMouseEnter={onMouseEnter}>
+	<a href='/lol' className={classNames('person', { expanded })} onMouseEnter={onMouseEnter}>
 		<div className='picture'>
 			<p className='time-short-version'>
 				<i className='ion-checkmark-round'></i> {timeShortVersion}
@@ -99,7 +99,7 @@ class Space extends Component {
     return (
       <div className='Space space-from-top'>
       <div className='pictures'>
-        <div className="mask"></div>
+        <div className='mask'></div>
         <img src='/assets/photo1.jpg'/>
         <img src='/assets/photo2.jpg'/>
         <img src='/assets/photo3.jpg'/>
@@ -113,26 +113,26 @@ class Space extends Component {
 
       <h3>Schedule</h3>
 
-      <div className="schedule padded-left">
-        <p className="text">
+      <div className='schedule padded-left'>
+        <p className='text'>
           Come work any day of the week, from 2 P.M. to 8 P.M.<br/>
           China tea provided !
         </p>
-        <p className="currentStatus">
+        <p className='currentStatus'>
           Open right now until 8 P.M.
         </p>
       </div>
 
       <h3>Upcoming events</h3>
 
-      <div className="events padded-left">
-        <div className="event">
-          <p className="title">Brainstorming session</p>
-          <p className="when">Wednesday from 3 P.M. to no time</p>
+      <div className='events padded-left'>
+        <div className='event'>
+          <p className='title'>Brainstorming session</p>
+          <p className='when'>Wednesday from 3 P.M. to no time</p>
         </div>
-        <div className="event">
-          <p className="title">Project Speed dating</p>
-          <p className="when">Friday from 8 P.M. to 10 P.M.</p>
+        <div className='event'>
+          <p className='title'>Project Speed dating</p>
+          <p className='when'>Friday from 8 P.M. to 10 P.M.</p>
         </div>
       </div>
       </div>
