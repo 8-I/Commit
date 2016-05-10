@@ -22,6 +22,13 @@ export const schema = (email, hash) => ({
    * Orders ids that the user has been to
    */
   history: [],
+
+  /*
+   * Current session
+   *
+   * { enter: ..., leave: ... }
+   */
+  currentSession: null,
 })
 
 /*
@@ -51,9 +58,32 @@ export const getUserBy = payload => {
  *
  *   addSpace(userID, spaceID)
  */
-const append = field => (id, element) =>
+const append = field => id => element =>
   User.append(id, field, element)
 
-export const addSpace = append('spaces')
-export const addHistory = append('history')
-export const addRating = append('needRating')
+const addSpace = append('spaces')
+const addHistory = append('history')
+const addRating = append('needRating')
+
+const startSession = id => () =>
+  User.updateField(id, 'currentSession', { enter: Date.now(), leave: null })
+
+/*
+ * User Model
+ *
+ * Usage:
+ *
+ * const email = 'gbadi@gmail.com'
+ *
+ * User({ email })
+ *  .then(user => user.startSession())
+ */
+export default payload =>
+  getUserBy(payload)
+    .then(body => ({
+      body,
+      addSpace: addSpace(body.id),
+      addHistory: addHistory(body.id),
+      addRating: addRating(body.id),
+      startSession: startSession(body.id),
+    }))

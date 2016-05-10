@@ -32,6 +32,11 @@ const append = table => (id, field, element) =>
     [field]: r.row(field).append(element),
   })
 
+const updateField = table => (id, field, newValue) =>
+  r.table(table).get(id).update({
+    [field]: newValue,
+  })
+
 export const db = table => ({
   find: find(table),
   findAll: findAll(table),
@@ -40,8 +45,9 @@ export const db = table => ({
   update: update(table),
   save: save(table),
   append: append(table),
+  updateField: updateField(table),
 })
 
 export const Spaces = db('spaces')
 export const User = db('users')
-
+export const Order = db('orders')
