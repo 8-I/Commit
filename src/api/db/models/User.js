@@ -4,7 +4,7 @@ import User from '../'
 /*
  * Format a new User before storing it
  */
-export const schema = (email, hash) => ({
+const schema = (email, hash) => ({
   email,
   hash,
 
@@ -26,10 +26,13 @@ export const schema = (email, hash) => ({
   /*
    * Current session
    *
-   * { enter: ..., leave: ... }
+   * { enter: ... }
    */
   currentSession: null,
 })
+
+export const create = (email, hash) =>
+  User.save(schema(email, hash))
 
 /*
  * Retrieve a user with a given field
@@ -66,7 +69,7 @@ const addHistory = append('history')
 const addRating = append('needRating')
 
 const startSession = id => () =>
-  User.updateField(id, 'currentSession', { enter: Date.now(), leave: null })
+  User.updateField(id, 'currentSession', { enter: Date.now() })
 
 /*
  * User Model
