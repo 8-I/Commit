@@ -1,0 +1,34 @@
+
+footer {
+	margin-top: 60px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+  	line-height: 22px;
+  .address {
+  	flex: 2;
+  	.metro {
+  		margin-bottom: 8px;
+  		img {
+	  		vertical-align: middle;
+	  	}
+	}
+  	.text {
+  	}
+  }
+
+  .phones {
+  	flex: 2;
+    overflow: hidden;
+    img {
+      vertical-align: middle;
+    }
+  	.information {
+  		margin-top: 10px;
+  		font-weight: bold;
+  	}
+  }
+  .filler {
+  	flex: 1;
+  }
+}

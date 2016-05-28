@@ -1,0 +1,38 @@
+
+$voyager-purple: #9100a7;
+
+/* Each section corresponds to a "block" */
+.section {
+	h3 {
+		color: #999;
+		font-size: 15px;
+		margin-bottom: 15px;
+	}
+}
+
+.projects  {
+	display: flex;
+	margin-right: 60px;
+	.project {
+		&.voyager {
+			background:url('/assets/graphical-voyager.png') 30px 20px no-repeat;
+		}		
+		h4 {
+			font-weight: normal;
+			color: $voyager-purple;
+		}
+		
+		text-decoration: none;
+		color: black;
+		border: 1px solid #e1e1e1;
+		border-radius: 3px;
+		padding: 20px;
+		min-height: 60px;
+		width: 200px;
+
+		transition: border-color 250ms ease-out;
+		&:hover {
+			border-color: $voyager-purple;
+		}
+	}
+}

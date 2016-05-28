@@ -1,0 +1,80 @@
+
+$turquoise: #2ed7ee;
+$darker-turquoise: #2ac6db;
+
+$darker-greenish-blue: #00cca6;
+
+/* CSS for components/People. Not used ATM */
+/*
+.people {
+    display: flex;
+    margin-top: 30px;
+
+    .person {
+      text-decoration: none;
+
+      &.expanded {
+        .time-short-version {
+          opacity: 0;
+        }
+        .details {
+          width: 200px;
+        }
+      }
+
+      .time, .time-short-version {
+        color: $darker-greenish-blue;
+      }
+
+      .picture {
+        position: relative;
+        margin-right: 10px;
+        width:64px;
+        height: 64px;
+        float:left;
+
+        .img {
+          height: 64px;
+          border-radius: 32px;
+          overflow: hidden;
+          img {
+            height: 64px;
+          }
+        }
+
+        .time-short-version {
+          z-index: 5;
+          width: 100px;
+          position: absolute;
+          top: 2px;
+          left: 30px;
+          font-size: 13px;
+          background-image: linear-gradient(to right, rgba(242,242,242,1) 0%,rgba(152,198,234,0) 76%,rgba(125,185,232,0) 99%);
+          opacity: 1;
+          transition: opacity 250ms ease-out;
+          // background-color: rgba(0, 0, 0, 0.6);
+        }
+      }
+
+      .details {
+        .name, .title, .time { display: block; }
+        .name {
+          color: $darker-turquoise;
+        }
+        .title {
+          color: #999;
+          margin-bottom: 5px;
+        }
+        .time {
+          font-size: 14px;
+        }
+
+        overflow: hidden;
+        width: 0;
+        transition: width 250ms ease-out;
+        .inner {
+          width: 200px;
+        }
+      }
+    }
+  }*/
